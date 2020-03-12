@@ -45,6 +45,14 @@ function fetchPostsSucces(data) {
 
 export function fetchPostsThunk() {
   return async function(dispatch, getState) {
+    const reduxState = getState();
+    console.log("FETCH POSTS STATE", reduxState.posts.rows.length);
+    // check if we have posts,
+    // if we do have posts, don't do anything
+    if (reduxState.posts.rows.length !== 0) return; // stop here
+
+    // else we have not posts ->  fetch them
+
     const response = await axios.get(
       "https://codaisseur-coders-network.herokuapp.com/posts"
     );
