@@ -108,3 +108,16 @@
 - X We need the data from that post (fetch the post & its comments)
 - X Store data in redux -> dispatch action, handle in reducer, use selector
 - X Render
+
+# Feature: Developer details Page
+
+- X Set up Route
+- X Make a component
+- X We need Link(s) to these pages
+- X We need to know the id of the developer we want to display
+- We need to fetch the data for a developer from the api
+- Store the dat in redux
+  - dispatch
+  - handle in reducer
+  - use a selector
+- Render the data

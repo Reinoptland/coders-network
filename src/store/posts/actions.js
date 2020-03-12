@@ -62,7 +62,7 @@ export function fetchPostsThunk() {
       `https://codaisseur-coders-network.herokuapp.com/posts?offset=${postCount}&limit=${limit}`
     );
 
-    console.log(response);
+    // console.log(response);
     const action = fetchPostsSucces(response.data);
     dispatch(action);
   };

@@ -21,6 +21,7 @@ export default function DeveloperList() {
           return (
             <DeveloperCard
               key={developer.id}
+              id={developer.id}
               name={developer.name}
               github_username={developer.github_username}
             />
