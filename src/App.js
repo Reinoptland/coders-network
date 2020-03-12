@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <Jumbotron>
+        <h1>Hello, world!</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </Jumbotron>
     </div>
   );
 }
