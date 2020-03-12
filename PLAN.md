@@ -78,3 +78,16 @@
 - X Selector
 - X Use Selector
 - X Render the data
+
+# Plan
+
+- Fix a bug where fetch posts everytime we go to that page
+- Should only fetch them if we don't have them yet
+
+# Pagination
+
+- UI (button to get more)
+- We listen to what the user is doing
+- When we click the button we want to fetch again, but with different offset & limit
+- offset (where do we start)
+- limit (how many do we want)

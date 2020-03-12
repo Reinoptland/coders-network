@@ -45,8 +45,21 @@ function fetchPostsSucces(data) {
 
 export function fetchPostsThunk() {
   return async function(dispatch, getState) {
+    const reduxState = getState();
+    const limit = 3;
+    const postCount = reduxState.posts.rows.length;
+    // check if we have posts,
+    // if we do have posts, don't do anything
+    console.log(reduxState.posts.rows.length, reduxState.posts.count);
+    // if (reduxState.posts.rows.length >= reduxState.posts.count) return; // stop here
+
+    // else we have not posts ->  fetch them
+
+    // reduxState.posts.rows.length (postCount)
+    // first time 0
+    // once we have 3 posts -> 3
     const response = await axios.get(
-      "https://codaisseur-coders-network.herokuapp.com/posts"
+      `https://codaisseur-coders-network.herokuapp.com/posts?offset=${postCount}&limit=${limit}`
     );
 
     console.log(response);
