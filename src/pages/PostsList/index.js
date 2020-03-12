@@ -38,7 +38,7 @@ export default function PostsList() {
     <Container>
       {posts.map(post => {
         console.log(post);
-        return <Post title={post.title} />;
+        return <Post key={post.id} id={post.id} title={post.title} />;
       })}
       <Button onClick={handleClick}>I want to read more posts</Button>
     </Container>
