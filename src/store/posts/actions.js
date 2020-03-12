@@ -68,12 +68,30 @@ export function fetchPostsThunk() {
   };
 }
 
+function fetchPostSuccess(data) {
+  return {
+    type: "FETCH_POST_DETAILS_SUCCESS",
+    payload: data
+  };
+}
+
 export function fetchPostById(postId) {
   return async function(dispatch, getState) {
-    const response = await axios.get(
-      `https://codaisseur-coders-network.herokuapp.com/posts/${postId}`
-    );
+    const [postResponse, commentsReponse] = await Promise.all([
+      axios.get(
+        `https://codaisseur-coders-network.herokuapp.com/posts/${postId}`
+      ),
+      axios.get(
+        `https://codaisseur-coders-network.herokuapp.com/posts/${postId}/comments`
+      )
+    ]);
 
-    console.log(response);
+    console.log(postResponse, commentsReponse);
+
+    const data = { ...postResponse.data, comments: commentsReponse.data.rows };
+
+    const action = fetchPostSuccess(data);
+    console.log(action);
+    dispatch(action);
   };
 }
