@@ -38,6 +38,24 @@
 
 # Plan
 
-- Setup
+- X Setup
 - Get posts (with a thunk)
 - Get developers (with a thunk DIY)
+
+# Post list page
+
+- Create a component
+- Route to the component
+- Navigate to the posts page
+- Gather data (from where?)
+  - Make a request to the api for data
+    - useEffect
+  - Action creator
+  - Dispatch action
+- Handle action in the reducer
+- Selector
+- Use Selector
+- Render the data
+
+- Later
+  - Show the user our app is loading (spinner)
