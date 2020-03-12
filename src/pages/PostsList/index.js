@@ -3,6 +3,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkExample, fetchPostsThunk } from "../../store/posts/actions";
 import { selectPosts } from "../../store/posts/selectors";
+import Post from "../../components/Post";
+import Container from "react-bootstrap/Container";
 
 export default function PostsList() {
   const dispatch = useDispatch();
@@ -26,5 +28,12 @@ export default function PostsList() {
     },
     [dispatch]
   );
-  return <div>POSTS LIST</div>;
+  return (
+    <Container>
+      {posts.map(post => {
+        console.log(post);
+        return <Post title={post.title} />;
+      })}
+    </Container>
+  );
 }
