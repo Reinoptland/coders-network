@@ -69,10 +69,10 @@
   - X Navbar
   - X Navlink
 - X Navigate to the developer page
-- Gather data (from where?)
-- Make a request to the api for data
-  - useEffect
-- Action creator (async, a.k.a. a thunk)
+- X Gather data (from where?)
+- X Make a request to the api for data
+  - X useEffect
+- X Action creator (async, a.k.a. a thunk)
 - Dispatch action
 - Handle action in the reducer
 - Selector
