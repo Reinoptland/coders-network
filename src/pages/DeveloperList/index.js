@@ -3,6 +3,7 @@ import { fetchDevelopersThunk } from "../../store/developers/actions";
 import { selectDevelopers } from "../../store/developers/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import DeveloperCard from "../../components/DeveloperCard";
+import Container from "react-bootstrap/Container";
 
 export default function DeveloperList() {
   const dispatch = useDispatch();
@@ -12,11 +13,11 @@ export default function DeveloperList() {
     dispatch(fetchDevelopersThunk());
   }, [dispatch]);
   return (
-    <div>
+    <Container>
       DEVELOPER LIST
       <div>
         {developers.map(developer => {
-          console.log(developer);
+          //   console.log(developer);
           return (
             <DeveloperCard
               key={developer.id}
@@ -26,6 +27,6 @@ export default function DeveloperList() {
           );
         })}
       </div>
-    </div>
+    </Container>
   );
 }

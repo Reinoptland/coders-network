@@ -73,8 +73,8 @@
 - X Make a request to the api for data
   - X useEffect
 - X Action creator (async, a.k.a. a thunk)
-- Dispatch action
-- Handle action in the reducer
-- Selector
-- Use Selector
-- Render the data
+- X Dispatch action
+- X Handle action in the reducer
+- X Selector
+- X Use Selector
+- X Render the data

@@ -12,11 +12,11 @@ export function fetchDevelopersThunk() {
     const response = await axios.get(
       "https://codaisseur-coders-network.herokuapp.com/developers"
     );
-    console.log(response);
+    // console.log(response);
 
     const action = fetchDevelopersSuccess(response.data);
 
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   };
 }

@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 export default function DeveloperCard(props) {
-  console.log(props);
+  //   console.log(props);
   return (
     <Card>
       <Card.Body>
