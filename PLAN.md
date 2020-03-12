@@ -51,9 +51,9 @@
   - X Navbar
   - X Navlink
 - X Navigate to the posts page
-- Gather data (from where?)
-  - Make a request to the api for data
-    - useEffect
+- X Gather data (from where?)
+  - X Make a request to the api for data
+    - X useEffect
   - Action creator
   - Dispatch action
 - Handle action in the reducer
