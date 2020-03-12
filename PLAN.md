@@ -54,8 +54,8 @@
 - X Gather data (from where?)
   - X Make a request to the api for data
     - X useEffect
-  - Action creator
-  - Dispatch action
+  - X Action creator (async, a.k.a. a thunk)
+  - X Dispatch action
 - Handle action in the reducer
 - Selector
 - Use Selector
