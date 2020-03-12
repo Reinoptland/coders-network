@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import PostsList from "./pages/PostsList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           calling extra attention to featured content or information.
         </p>
       </Jumbotron>
+      <PostsList />
     </div>
   );
 }

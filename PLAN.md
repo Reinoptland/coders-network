@@ -44,7 +44,7 @@
 
 # Post list page
 
-- Create a component
+- X Create a component
 - Route to the component
 - Navigate to the posts page
 - Gather data (from where?)
