@@ -56,7 +56,7 @@
     - X useEffect
   - X Action creator (async, a.k.a. a thunk)
   - X Dispatch action
-- Handle action in the reducer
+- X Handle action in the reducer
 - Selector
 - Use Selector
 - Render the data
