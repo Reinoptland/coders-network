@@ -5,7 +5,7 @@ import developers from "./developers/reducer";
 
 const reducer = combineReducers({
   posts: posts,
-  postsDetails: postDetails,
+  postDetails: postDetails,
   developers: developers
 });
 export default reducer;
