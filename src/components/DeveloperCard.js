@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 export default function DeveloperCard(props) {
-  console.log("PROPS IN CARD", props);
+  // console.log("PROPS IN CARD", props);
   return (
     <Card>
       <Card.Body>

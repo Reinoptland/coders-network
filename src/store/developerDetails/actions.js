@@ -12,7 +12,7 @@ export function fetchDeveloperById(developerId) {
     const response = await axios.get(
       `https://codaisseur-coders-network.herokuapp.com/developers/${developerId}`
     );
-    console.log(response);
+    // console.log(response);
 
     dispatch(developerFetchedSuccess(response.data));
   };

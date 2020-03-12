@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 export default function PostsList() {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
-  console.log(posts);
+  //  console.log(posts);
   useEffect(
     function() {
       // async function fetchPosts() {
@@ -36,7 +36,7 @@ export default function PostsList() {
   return (
     <Container>
       {posts.map(post => {
-        console.log(post);
+        // console.log(post);
         return <Post key={post.id} id={post.id} title={post.title} />;
       })}
       <Button onClick={handleClick}>I want to read more posts</Button>

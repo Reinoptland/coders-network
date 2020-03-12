@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDeveloperById } from "../../store/developerDetails/actions";
 import { selectDeveloperDetails } from "../../store/developerDetails/selectors";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
 export default function DeveloperDetails() {
@@ -12,8 +12,8 @@ export default function DeveloperDetails() {
   const { id } = useParams();
   const developer = useSelector(selectDeveloperDetails);
 
-  console.log("DEVELOPER ID", id);
-  console.log("DEVELOPER", developer);
+  // console.log("DEVELOPER ID", id);
+  // console.log("DEVELOPER", developer);
 
   useEffect(() => {
     dispatch(fetchDeveloperById(id));
@@ -30,13 +30,15 @@ export default function DeveloperDetails() {
           <Button variant="primary">View Details</Button>
         </Link> */}
         <Card.Title>Posts</Card.Title>
-        {developer.posts.map(post => {
-          return (
-            <Link to={`/posts/${post.id}`}>
-              <Button variant="primary">{post.title}</Button>
-            </Link>
-          );
-        })}
+        <ListGroup>
+          {developer.posts.map(post => {
+            return (
+              <ListGroup.Item key={post.id}>
+                <Link to={`/posts/${post.id}`}>{post.title}</Link>
+              </ListGroup.Item>
+            );
+          })}
+        </ListGroup>
       </Card.Body>
     </Card>
   );

@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 export default function PostDetails() {
   // I WANT THE ID OF THIS POST
@@ -26,7 +27,9 @@ export default function PostDetails() {
     <Container>
       <Jumbotron>
         <h1>{postDetails.title}</h1>
-        <h3>Author: {postDetails.developer.name}</h3>
+        <Link to={`/developers/${postDetails.developer.id}`}>
+          <h3>Author: {postDetails.developer.name}</h3>
+        </Link>
       </Jumbotron>
       <ReactMarkdown source={postDetails.content} />
       {postDetails.comments.map(comment => {
