@@ -113,7 +113,7 @@
 
 - X Set up Route
 - X Make a component
-- We need Link(s) to these pages
+- X We need Link(s) to these pages
 - We need to know the id of the developer we want to display
 - We need to fetch the data for a developer from the api
 - Store the dat in redux
