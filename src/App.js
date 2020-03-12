@@ -1,17 +1,18 @@
 import React from "react";
 import "./App.css";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import PostsList from "./pages/PostsList";
+import Home from "./pages/Home";
+import { Route, Switch } from "react-router-dom";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
     <div>
-      <Jumbotron>
-        <h1>Hello, world!</h1>
-        <p>
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
-        </p>
-      </Jumbotron>
+      <Navigation />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/posts" component={PostsList} />
+      </Switch>
     </div>
   );
 }

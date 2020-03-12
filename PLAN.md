@@ -44,15 +44,19 @@
 
 # Post list page
 
-- Create a component
+- X Create a component
 - Route to the component
-- Navigate to the posts page
-- Gather data (from where?)
-  - Make a request to the api for data
-    - useEffect
-  - Action creator
-  - Dispatch action
-- Handle action in the reducer
+  - X Switch
+  - X Route -> PostsList
+  - X Navbar
+  - X Navlink
+- X Navigate to the posts page
+- X Gather data (from where?)
+  - X Make a request to the api for data
+    - X useEffect
+  - X Action creator (async, a.k.a. a thunk)
+  - X Dispatch action
+- X Handle action in the reducer
 - Selector
 - Use Selector
 - Render the data
