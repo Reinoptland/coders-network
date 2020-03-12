@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkExample, fetchPostsThunk } from "../../store/posts/actions";
 import { selectPosts } from "../../store/posts/selectors";
@@ -38,7 +37,7 @@ export default function PostsList() {
     <Container>
       {posts.map(post => {
         console.log(post);
-        return <Post title={post.title} />;
+        return <Post key={post.id} id={post.id} title={post.title} />;
       })}
       <Button onClick={handleClick}>I want to read more posts</Button>
     </Container>

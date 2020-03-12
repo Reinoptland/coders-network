@@ -91,3 +91,20 @@
 - When we click the button we want to fetch again, but with different offset & limit
 - offset (where do we start)
 - limit (how many do we want)
+
+# Feature: Detail page for posts (so we can read it)
+
+- We need some navigation to get to this detail page
+- Fetch a single posts with all of its info (who write it etc)
+- Fetch the comments for that post
+- Display all of that
+
+# Plan
+
+- X Set up a route
+- X new component
+- X We need a link
+- X we need id of the post the user wants to read (but how? -> store it in the url, useParams)
+- X We need the data from that post (fetch the post & its comments)
+- X Store data in redux -> dispatch action, handle in reducer, use selector
+- X Render

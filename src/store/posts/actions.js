@@ -50,7 +50,7 @@ export function fetchPostsThunk() {
     const postCount = reduxState.posts.rows.length;
     // check if we have posts,
     // if we do have posts, don't do anything
-    console.log(reduxState.posts.rows.length, reduxState.posts.count);
+    // console.log(reduxState.posts.rows.length, reduxState.posts.count);
     // if (reduxState.posts.rows.length >= reduxState.posts.count) return; // stop here
 
     // else we have not posts ->  fetch them
@@ -64,6 +64,34 @@ export function fetchPostsThunk() {
 
     console.log(response);
     const action = fetchPostsSucces(response.data);
+    dispatch(action);
+  };
+}
+
+function fetchPostSuccess(data) {
+  return {
+    type: "FETCH_POST_DETAILS_SUCCESS",
+    payload: data
+  };
+}
+
+export function fetchPostById(postId) {
+  return async function(dispatch, getState) {
+    const [postResponse, commentsReponse] = await Promise.all([
+      axios.get(
+        `https://codaisseur-coders-network.herokuapp.com/posts/${postId}`
+      ),
+      axios.get(
+        `https://codaisseur-coders-network.herokuapp.com/posts/${postId}/comments`
+      )
+    ]);
+
+    // console.log(postResponse, commentsReponse);
+
+    const data = { ...postResponse.data, comments: commentsReponse.data.rows };
+
+    const action = fetchPostSuccess(data);
+    // console.log(action);
     dispatch(action);
   };
 }
