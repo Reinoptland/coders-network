@@ -12,10 +12,10 @@ import Card from "react-bootstrap/Card";
 export default function PostDetails() {
   // I WANT THE ID OF THIS POST
   const params = useParams();
-  console.log(params.id);
+  //   console.log(params.id);
   const dispatch = useDispatch();
   const postDetails = useSelector(selectPostDetails);
-  console.log(postDetails);
+  //   console.log(postDetails);
 
   useEffect(() => {
     dispatch(fetchPostById(params.id));
@@ -30,9 +30,9 @@ export default function PostDetails() {
       </Jumbotron>
       <ReactMarkdown source={postDetails.content} />
       {postDetails.comments.map(comment => {
-        console.log(comment);
+        // console.log(comment);
         return (
-          <Card>
+          <Card key={comment.id}>
             <h5>{comment.developer.name} says:</h5>
             <p>{comment.text}</p>
           </Card>

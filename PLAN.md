@@ -105,6 +105,6 @@
 - X new component
 - X We need a link
 - X we need id of the post the user wants to read (but how? -> store it in the url, useParams)
-- We need the data from that post (fetch the post & its comments)
-- Store data in redux -> dispatch action, handle in reducer, use selector
-- Render
+- X We need the data from that post (fetch the post & its comments)
+- X Store data in redux -> dispatch action, handle in reducer, use selector
+- X Render

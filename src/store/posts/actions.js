@@ -50,7 +50,7 @@ export function fetchPostsThunk() {
     const postCount = reduxState.posts.rows.length;
     // check if we have posts,
     // if we do have posts, don't do anything
-    console.log(reduxState.posts.rows.length, reduxState.posts.count);
+    // console.log(reduxState.posts.rows.length, reduxState.posts.count);
     // if (reduxState.posts.rows.length >= reduxState.posts.count) return; // stop here
 
     // else we have not posts ->  fetch them
@@ -86,12 +86,12 @@ export function fetchPostById(postId) {
       )
     ]);
 
-    console.log(postResponse, commentsReponse);
+    // console.log(postResponse, commentsReponse);
 
     const data = { ...postResponse.data, comments: commentsReponse.data.rows };
 
     const action = fetchPostSuccess(data);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   };
 }
