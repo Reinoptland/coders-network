@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import PostsList from "./pages/PostsList";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
           calling extra attention to featured content or information.
         </p>
       </Jumbotron>
-      <PostsList />
+      <Switch>
+        <Route path="/posts" component={PostsList} />
+      </Switch>
     </div>
   );
 }

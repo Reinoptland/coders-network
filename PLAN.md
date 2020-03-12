@@ -46,6 +46,10 @@
 
 - X Create a component
 - Route to the component
+  - X Switch
+  - X Route -> PostsList
+  - Navbar
+  - Navlink
 - Navigate to the posts page
 - Gather data (from where?)
   - Make a request to the api for data
