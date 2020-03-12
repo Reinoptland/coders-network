@@ -57,9 +57,24 @@
   - X Action creator (async, a.k.a. a thunk)
   - X Dispatch action
 - X Handle action in the reducer
-- Selector
-- Use Selector
-- Render the data
+- X Selector
+- X Use Selector
+- X Render the data
 
-- Later
-  - Show the user our app is loading (spinner)
+# Developer list page
+
+- X Create a component
+- X Route to the component
+  - X Route -> Developer List
+  - X Navbar
+  - X Navlink
+- X Navigate to the developer page
+- X Gather data (from where?)
+- X Make a request to the api for data
+  - X useEffect
+- X Action creator (async, a.k.a. a thunk)
+- X Dispatch action
+- X Handle action in the reducer
+- X Selector
+- X Use Selector
+- X Render the data
