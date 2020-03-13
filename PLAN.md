@@ -170,6 +170,6 @@ WHAT DO WE NEED?
   - X Event handlers / Listeners
 - Send info api
   - X async action
-  - Make a post request to the api
-  - dispatch action
-  - handle action in reducer -> token -> store in the reducer
+  - X Make a post request to the api
+  - X dispatch action
+  - X handle action in reducer -> token -> store in the reducer
