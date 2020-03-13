@@ -115,9 +115,14 @@
 - X Make a component
 - X We need Link(s) to these pages
 - X We need to know the id of the developer we want to display
-- We need to fetch the data for a developer from the api
-- Store the dat in redux
-  - dispatch
-  - handle in reducer
-  - use a selector
-- Render the data
+- X We need to fetch the data for a developer from the api
+- X Store the dat in redux
+  - X dispatch
+  - X handle in reducer
+  - X use a selector
+- X Render the data
+
+# Feature: Pagination for developers
+
+- Only fetch 1 developer (limit 1)
+- When a user clicks "load more", fetch 1 more developer (change the offset when fetching)
