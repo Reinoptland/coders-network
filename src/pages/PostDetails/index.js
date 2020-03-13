@@ -25,7 +25,7 @@ export default function PostDetails() {
 
   if (!postDetails.title) return <Spinner />;
 
-  console.log(postDetails);
+  // console.log(postDetails);
   return (
     <Container>
       <Jumbotron>

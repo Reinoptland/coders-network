@@ -23,7 +23,7 @@ export default function DeveloperDetails() {
 
   if (!developer.name) return <h1>Loading</h1>;
 
-  console.log(developer);
+  //   console.log(developer);
   return (
     <Card>
       <Card.Body>
