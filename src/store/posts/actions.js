@@ -95,3 +95,9 @@ export function fetchPostById(postId) {
     dispatch(action);
   };
 }
+
+export function postCommentThunk(text) {
+  return async function(dispatch, getState) {
+    console.log("TEXT IN THUNK", text);
+  };
+}
