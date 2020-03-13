@@ -4,6 +4,7 @@ import { selectDevelopers } from "../../store/developers/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import DeveloperCard from "../../components/DeveloperCard";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 export default function DeveloperList() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ export default function DeveloperList() {
           );
         })}
       </div>
+      <Button>Load more Developers</Button>
     </Container>
   );
 }
