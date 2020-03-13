@@ -173,3 +173,12 @@ WHAT DO WE NEED?
   - X Make a post request to the api
   - X dispatch action
   - X handle action in reducer -> token -> store in the reducer
+
+BONUS:
+
+- X Remove signup from navigation when signed in
+
+  - X In the navigation component, check if we have a token
+  - X If we have a token, don't show signup link
+
+- redirect user from signup to posts list if successfull
