@@ -1,5 +1,5 @@
 const initialState = {
-  token: localStorage.getItem("token") || null
+  token: localStorage.getItem("token")
 };
 
 export default function reducer(state = initialState, action) {
@@ -10,6 +10,10 @@ export default function reducer(state = initialState, action) {
 
     case "PROFILE_FETCHED":
       return { ...state, ...action.payload };
+
+    case "LOG_OUT":
+      localStorage.removeItem("token");
+      return { token: null };
 
     default:
       return state;

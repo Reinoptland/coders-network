@@ -18,7 +18,7 @@ function profileFetched(profile) {
 
 export function logout() {
   return {
-    type: "LOGOUT"
+    type: "LOG_OUT"
   };
 }
 
