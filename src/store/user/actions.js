@@ -37,7 +37,20 @@ export function loginThunk(email, password) {
       password: password
     });
 
+    console.log(response);
+
+    const token = response.data.jwt;
+
+    const profileResponse = await axios.get(`${baseUrl}/me`, {
+      // set headers
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    console.log(profileResponse);
+
     // console.log(response);
-    dispatch(userAuthenticated(response.data.jwt));
+    dispatch(userAuthenticated(token));
   };
 }

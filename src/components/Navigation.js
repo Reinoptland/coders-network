@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
-  console.log("TOKEN IN NAVBAR", token);
+  // console.log("TOKEN IN NAVBAR", token);
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">

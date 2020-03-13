@@ -194,3 +194,11 @@ BONUS:
 - X Reponse
 - X Dispatch action
 - X Handle in reducer
+
+# Feature, get our own profile
+
+- Getting our own profile means we have to be authorized
+- We have to send out token to get our profile
+- After we signup or login, get our own profile from `/me` endpoint
+- Sent the token in a header to be authorized
+- Display some info to the user that we are logged in (email in Navbar)

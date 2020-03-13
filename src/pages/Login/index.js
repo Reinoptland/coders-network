@@ -13,7 +13,7 @@ export default function Login() {
   function handleLogin(event) {
     event.preventDefault();
 
-    console.log(email, password);
+    // console.log(email, password);
     dispatch(loginThunk(email, password));
   }
 
