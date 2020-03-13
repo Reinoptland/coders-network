@@ -165,9 +165,9 @@ Authorization: am I allowed to do this? -> send your token
 WHAT DO WE NEED?
 
 - Get email, password & name from user
-  - Form
+  - X Form
   - X Route & Link to see the form
-  - Event handlers / Listeners
+  - X Event handlers / Listeners
 - Send info api
   - async action
   - dispatch action
