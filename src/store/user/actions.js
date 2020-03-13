@@ -2,9 +2,9 @@ import axios from "axios";
 
 const baseUrl = "https://codaisseur-coders-network.herokuapp.com";
 
-function signUpSuccess(token) {
+function userAuthenticated(token) {
   return {
-    type: "SIGN_UP_SUCCESS",
+    type: "USER_AUTHENTICATED",
     payload: token
   };
 }
@@ -24,7 +24,7 @@ export function signUpThunk(name, password, email) {
 
     console.log(response.data.jwt);
 
-    dispatch(signUpSuccess(response.data.jwt));
+    dispatch(userAuthenticated(response.data.jwt));
   };
 }
 
@@ -38,5 +38,6 @@ export function loginThunk(email, password) {
     });
 
     console.log(response);
+    dispatch(userAuthenticated(response.data.jwt));
   };
 }
