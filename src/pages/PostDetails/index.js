@@ -10,6 +10,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
+import CommentForm from "./CommentForm";
 
 export default function PostDetails() {
   // I WANT THE ID OF THIS POST
@@ -40,6 +41,7 @@ export default function PostDetails() {
         ))}
       </Jumbotron>
       <ReactMarkdown source={postDetails.content} />
+      <CommentForm />
       {postDetails.comments.map(comment => {
         // console.log(comment);
         return (
