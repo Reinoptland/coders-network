@@ -96,6 +96,13 @@ export function fetchPostById(postId) {
   };
 }
 
+function postCommentSuccess(comment) {
+  return {
+    type: "POST_COMMENT_SUCCESS",
+    payload: comment
+  };
+}
+
 export function postCommentThunk(text) {
   return async function(dispatch, getState) {
     // we need
@@ -124,5 +131,7 @@ export function postCommentThunk(text) {
     );
 
     console.log(response);
+
+    dispatch(postCommentSuccess(response.data));
   };
 }
