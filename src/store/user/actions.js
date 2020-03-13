@@ -66,3 +66,26 @@ export function loginThunk(email, password) {
     dispatch(profileFetched(profileResponse.data));
   };
 }
+
+export function fetchOwnProfile() {
+  return async function(dispatch, getState) {
+    const state = getState(); // check if we have a token
+    const token = state.user.token;
+
+    if (token === null) return;
+
+    // we have a token, let's check if it valid
+
+    const profileResponse = await axios.get(`${baseUrl}/me`, {
+      // set headers
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    console.log(profileResponse.data);
+    console.log("WE HAVE A TOKEN");
+
+    dispatch(profileFetched(profileResponse.data));
+  };
+}

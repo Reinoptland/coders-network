@@ -204,3 +204,9 @@ BONUS:
 - X Display some info to the user that we are logged in (email in Navbar)
 
 # Feature: Staying logged in (save token in localStorage)
+
+- Save token in local storage
+- Get token as an initia;
+- When the app is loading for first time, use the token from the localstorage
+- If we can make a request with the token -> keep it
+- If can't make a request with the token -> log our user out (token no longer valid)
