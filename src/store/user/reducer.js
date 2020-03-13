@@ -4,7 +4,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "SIGN_UP_SUCCESS":
+    case "USER_AUTHENTICATED":
       return { ...state, token: action.payload };
 
     default:

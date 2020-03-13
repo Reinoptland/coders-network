@@ -16,7 +16,7 @@ export function fetchDevelopersThunk() {
     // console.log(developerCount);
 
     const response = await axios.get(
-      `https://codaisseur-coders-network.herokuapp.com/developers?offset=${developerCount}&limit=1`
+      `https://codaisseur-coders-network.herokuapp.com/developers?offset=${developerCount}&limit=10`
     );
 
     const action = fetchDevelopersSuccess(response.data);
