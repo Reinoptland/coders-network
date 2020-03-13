@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import { loginThunk } from "../../store/user/actions";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   function handleLogin(event) {
     event.preventDefault();
 
     console.log(email, password);
+    dispatch(loginThunk(email, password));
   }
 
   return (

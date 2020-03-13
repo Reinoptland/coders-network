@@ -189,7 +189,7 @@ BONUS:
 - X We need Route & Navigation
 - X Form
 - X Get the userinput, event listeners & handlers
-- Action creator ( a thunk )
+- X Action creator ( a thunk )
 - Post email & password to /login
 - Reponse
 - Dispatch action

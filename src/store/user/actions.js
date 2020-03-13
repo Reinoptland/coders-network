@@ -25,3 +25,9 @@ export function signUpThunk(name, password, email) {
     dispatch(signUpSuccess(response.data.jwt));
   };
 }
+
+export function loginThunk(email, password) {
+  return function(dispatch, getState) {
+    console.log(email, password, "IN THUNK");
+  };
+}
