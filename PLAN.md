@@ -210,3 +210,13 @@ BONUS:
 - When the app is loading for first time, use the token from the localstorage
 - If we can make a request with the token -> keep it
 - If can't make a request with the token -> log our user out (token no longer valid)
+
+# We want to be able to comment on a Post
+
+- X we need to be logged in (have a token)
+- X Form to comment in
+- Store the comment (where?)
+- Send a POST request to the api -> with our comment & token
+  - Async action (a thunk)
+- We also need to store our comment in Redux (otherwise we will not see it ourselves)
+  - Once we get a response dispatch an action, handle in reducer
