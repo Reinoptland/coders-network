@@ -13,6 +13,11 @@ export default function DeveloperList() {
   useEffect(() => {
     dispatch(fetchDevelopersThunk());
   }, [dispatch]);
+
+  function handleClick() {
+    dispatch(fetchDevelopersThunk());
+  }
+
   return (
     <Container>
       DEVELOPER LIST
@@ -29,7 +34,7 @@ export default function DeveloperList() {
           );
         })}
       </div>
-      <Button>Load more Developers</Button>
+      <Button onClick={handleClick}>Load more Developers</Button>
     </Container>
   );
 }
