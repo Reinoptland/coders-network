@@ -187,8 +187,8 @@ BONUS:
 
 - X Login Page
 - X We need Route & Navigation
-- Form
-- Get the userinput, event listeners & handlers
+- X Form
+- X Get the userinput, event listeners & handlers
 - Action creator ( a thunk )
 - Post email & password to /login
 - Reponse
