@@ -124,5 +124,51 @@
 
 # Feature: Pagination for developers
 
-- Only fetch 1 developer (limit 1)
-- When a user clicks "load more", fetch 1 more developer (change the offset when fetching)
+- X Only fetch 1 developer (limit 1)
+- X When a user clicks "load more", fetch 1 more developer (change the offset when fetching)
+
+# Learning goals
+
+- Understand Authentication & Authorization
+- Know what a "token" is
+- How to get a "token" from the api
+- Learn how to make a POST request
+- Know how to use a "token" as means of authorization
+
+# Authentication & Authorization
+
+## Authentication
+
+- Letting the app (backend) know who you are
+- Typically you sign up with email & password
+- Now that you have an account you can **login** with email & password
+- Once you are authenticated by email & password you get a **token**\
+- A **jwt**/**token** -> JSON Web Token
+
+## Authorization
+
+- For some actions (like posting / deleting / editing) you have to be **Authorized**
+- The backend can identify you by your **token**
+- You can now send the **token** with each request (so you don't have to give your password again and again and again)
+- That way the backend can figure out wether you are Authorized to do something
+- You send the token in an **Authorization header**
+- If you don't send the token when posting / editing / deleting, the api will block your request
+- The token is only valid for a couple of hours (then you need to log in again)
+
+Q: What is the difference between authenticating and authorizing
+
+Authentication: who am I -> signup & login
+Authorization: am I allowed to do this? -> send your token
+
+# Feature: Sign Up
+
+WHAT DO WE NEED?
+
+- Get email, password & name from user
+  - Form
+  - X Route & Link to see the form
+  - Event handlers / Listeners
+- Send info api
+  - async action
+  - dispatch action
+  - handle action in reducer -> token -> store in the reducer

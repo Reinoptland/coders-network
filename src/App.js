@@ -4,6 +4,7 @@ import PostsList from "./pages/PostsList";
 import DeveloperList from "./pages/DeveloperList";
 import DeveloperDetails from "./pages/DeveloperDetails";
 import PostDetails from "./pages/PostDetails";
+import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/posts/:id" component={PostDetails} />
         <Route exact path="/developers" component={DeveloperList} />
         <Route path="/developers/:id" component={DeveloperDetails} />
+        <Route path="/signup" component={SignUp} />
       </Switch>
     </div>
   );
