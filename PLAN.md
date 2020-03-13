@@ -215,8 +215,8 @@ BONUS:
 
 - X we need to be logged in (have a token)
 - X Form to comment in
-- Store the comment (where?)
-- Send a POST request to the api -> with our comment & token
-  - Async action (a thunk)
-- We also need to store our comment in Redux (otherwise we will not see it ourselves)
-  - Once we get a response dispatch an action, handle in reducer
+- X Store the comment (where?)
+- X Send a POST request to the api -> with our comment & token
+  - X Async action (a thunk)
+- X We also need to store our comment in Redux (otherwise we will not see it ourselves)
+  - X Once we get a response dispatch an action, handle in reducer

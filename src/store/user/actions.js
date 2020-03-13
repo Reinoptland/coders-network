@@ -50,7 +50,7 @@ export function loginThunk(email, password) {
       password: password
     });
 
-    console.log(response);
+    // console.log(response);
 
     const token = response.data.jwt;
     dispatch(userAuthenticated(token));
@@ -62,7 +62,7 @@ export function loginThunk(email, password) {
       }
     });
 
-    console.log(profileResponse.data);
+    // console.log(profileResponse.data);
     dispatch(profileFetched(profileResponse.data));
   };
 }
@@ -84,15 +84,15 @@ export function fetchOwnProfile() {
         }
       });
 
-      console.log(profileResponse.data);
-      console.log("WE HAVE A TOKEN");
+      // console.log(profileResponse.data);
+      // console.log("WE HAVE A TOKEN");
 
       dispatch(profileFetched(profileResponse.data));
     } catch (error) {
       // my request failed probably my token is no longer valid
       // it expired, because you can only use it for a couple of hours
       dispatch(logout());
-      console.log(error);
+      // console.log(error);
     }
   };
 }

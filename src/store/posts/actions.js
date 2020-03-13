@@ -130,7 +130,7 @@ export function postCommentThunk(text) {
       }
     );
 
-    console.log(response);
+    // console.log(response);
 
     dispatch(postCommentSuccess(response.data));
   };

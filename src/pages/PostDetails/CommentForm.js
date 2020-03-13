@@ -13,7 +13,7 @@ export default function CommentForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(text);
+    // console.log(text);
     dispatch(postCommentThunk(text));
     setText("");
   }
