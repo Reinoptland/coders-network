@@ -190,7 +190,7 @@ BONUS:
 - X Form
 - X Get the userinput, event listeners & handlers
 - X Action creator ( a thunk )
-- Post email & password to /login
-- Reponse
-- Dispatch action
-- Handle in reducer
+- X Post email & password to /login
+- X Reponse
+- X Dispatch action
+- X Handle in reducer

@@ -11,7 +11,7 @@ function userAuthenticated(token) {
 
 export function signUpThunk(name, password, email) {
   return async function(dispatch, getState) {
-    console.log("INSIDE THUNK", name, password, email);
+    // console.log("INSIDE THUNK", name, password, email);
     const response = await axios.post(
       `${baseUrl}/signup`,
       // send request body as a second argument, just an object with the data
@@ -22,7 +22,7 @@ export function signUpThunk(name, password, email) {
       }
     );
 
-    console.log(response.data.jwt);
+    // console.log(response.data.jwt);
 
     dispatch(userAuthenticated(response.data.jwt));
   };
@@ -30,14 +30,14 @@ export function signUpThunk(name, password, email) {
 
 export function loginThunk(email, password) {
   return async function(dispatch, getState) {
-    console.log(email, password, "IN THUNK");
+    // console.log(email, password, "IN THUNK");
 
     const response = await axios.post(`${baseUrl}/login`, {
       email: email,
       password: password
     });
 
-    console.log(response);
+    // console.log(response);
     dispatch(userAuthenticated(response.data.jwt));
   };
 }
