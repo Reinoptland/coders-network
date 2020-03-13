@@ -13,7 +13,7 @@ export default function SignUp() {
   const [name, setName] = useState("");
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
-  console.log("TOKEN IN SIGNUP", token);
+  // console.log("TOKEN IN SIGNUP", token);
   const history = useHistory();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function SignUp() {
 
   function submitForm(event) {
     event.preventDefault();
-    console.log(email, password, name);
+    // console.log(email, password, name);
 
     dispatch(signUpThunk(name, password, email));
 

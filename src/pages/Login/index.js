@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { loginThunk } from "../../store/user/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectToken } from "../../store/user/selectors";
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
+  const token = useSelector(selectToken);
 
   function handleLogin(event) {
     event.preventDefault();
 
-    console.log(email, password);
+    // console.log(email, password);
     dispatch(loginThunk(email, password));
   }
+
+  useEffect(() => {
+    if (token !== null) {
+      history.push("/posts");
+    }
+  }, [token, history]);
 
   return (
     <Container>

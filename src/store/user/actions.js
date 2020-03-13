@@ -9,6 +9,13 @@ function userAuthenticated(token) {
   };
 }
 
+function profileFetched(profile) {
+  return {
+    type: "PROFILE_FETCHED",
+    payload: profile
+  };
+}
+
 export function signUpThunk(name, password, email) {
   return async function(dispatch, getState) {
     // console.log("INSIDE THUNK", name, password, email);
@@ -37,7 +44,19 @@ export function loginThunk(email, password) {
       password: password
     });
 
-    // console.log(response);
-    dispatch(userAuthenticated(response.data.jwt));
+    console.log(response);
+
+    const token = response.data.jwt;
+    dispatch(userAuthenticated(token));
+
+    const profileResponse = await axios.get(`${baseUrl}/me`, {
+      // set headers
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    console.log(profileResponse.data);
+    dispatch(profileFetched(profileResponse.data));
   };
 }

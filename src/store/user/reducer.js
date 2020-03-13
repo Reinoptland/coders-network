@@ -7,6 +7,9 @@ export default function reducer(state = initialState, action) {
     case "USER_AUTHENTICATED":
       return { ...state, token: action.payload };
 
+    case "PROFILE_FETCHED":
+      return { ...state, ...action.payload };
+
     default:
       return state;
   }
