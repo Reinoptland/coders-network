@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const baseUrl = "https://codaisseur-coders-network.herokuapp.com";
+
 function signUpSuccess(token) {
   return {
     type: "SIGN_UP_SUCCESS",
@@ -11,7 +13,7 @@ export function signUpThunk(name, password, email) {
   return async function(dispatch, getState) {
     console.log("INSIDE THUNK", name, password, email);
     const response = await axios.post(
-      "https://codaisseur-coders-network.herokuapp.com/signup",
+      `${baseUrl}/signup`,
       // send request body as a second argument, just an object with the data
       {
         name: name,
@@ -27,7 +29,14 @@ export function signUpThunk(name, password, email) {
 }
 
 export function loginThunk(email, password) {
-  return function(dispatch, getState) {
+  return async function(dispatch, getState) {
     console.log(email, password, "IN THUNK");
+
+    const response = await axios.post(`${baseUrl}/login`, {
+      email: email,
+      password: password
+    });
+
+    console.log(response);
   };
 }
