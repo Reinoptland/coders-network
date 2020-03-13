@@ -16,6 +16,12 @@ function profileFetched(profile) {
   };
 }
 
+export function logout() {
+  return {
+    type: "LOGOUT"
+  };
+}
+
 export function signUpThunk(name, password, email) {
   return async function(dispatch, getState) {
     // console.log("INSIDE THUNK", name, password, email);
