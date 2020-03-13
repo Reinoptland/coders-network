@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
+import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 
 export default function PostDetails() {
@@ -23,6 +24,8 @@ export default function PostDetails() {
   }, [dispatch, params.id]);
 
   if (!postDetails.title) return <Spinner />;
+
+  console.log(postDetails);
   return (
     <Container>
       <Jumbotron>
@@ -30,14 +33,23 @@ export default function PostDetails() {
         <Link to={`/developers/${postDetails.developer.id}`}>
           <h3>Author: {postDetails.developer.name}</h3>
         </Link>
+        {postDetails.tags.map(tag => (
+          <Badge key={tag.id} className="m-1" variant="warning">
+            {tag.tag}
+          </Badge>
+        ))}
       </Jumbotron>
       <ReactMarkdown source={postDetails.content} />
       {postDetails.comments.map(comment => {
         // console.log(comment);
         return (
           <Card key={comment.id}>
-            <h5>{comment.developer.name} says:</h5>
-            <p>{comment.text}</p>
+            <Card.Body>
+              <Card.Title>
+                <h5>{comment.developer.name} says:</h5>
+              </Card.Title>
+              <p>{comment.text}</p>
+            </Card.Body>
           </Card>
         );
       })}
