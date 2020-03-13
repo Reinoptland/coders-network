@@ -98,6 +98,31 @@ export function fetchPostById(postId) {
 
 export function postCommentThunk(text) {
   return async function(dispatch, getState) {
-    console.log("TEXT IN THUNK", text);
+    // we need
+    // - we need text from the user (parameter to this function)
+
+    // console.log("TEXT IN THUNK", text);
+
+    const state = getState();
+    // console.log(state);
+
+    // - we need the token from state
+    const token = state.user.token;
+    // - the id of the post we are commenting on also from state
+    const postId = state.postDetails.id;
+
+    const response = await axios.post(
+      `https://codaisseur-coders-network.herokuapp.com/posts/${postId}/comments`,
+      {
+        text: text
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    console.log(response);
   };
 }
