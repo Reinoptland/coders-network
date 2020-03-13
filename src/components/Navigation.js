@@ -30,6 +30,11 @@ export default function Navigation() {
               Sign up
             </Nav.Link>
           ) : null}
+          {token === null ? (
+            <Nav.Link as={NavLink} to="/login">
+              Login
+            </Nav.Link>
+          ) : null}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

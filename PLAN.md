@@ -182,3 +182,15 @@ BONUS:
   - X If we have a token, don't show signup link
 
 - redirect user from signup to posts list if successfull
+
+# Feature: Login
+
+- X Login Page
+- X We need Route & Navigation
+- Form
+- Get the userinput, event listeners & handlers
+- Action creator ( a thunk )
+- Post email & password to /login
+- Reponse
+- Dispatch action
+- Handle in reducer
