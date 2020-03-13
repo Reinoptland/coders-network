@@ -3,12 +3,19 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import { selectToken, selectUserEmail } from "../store/user/selectors";
-import { useSelector } from "react-redux";
+import { logout } from "../store/user/actions";
+import { useSelector, useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
   const email = useSelector(selectUserEmail);
+  const dispatch = useDispatch();
   // console.log("TOKEN IN NAVBAR", token);
+
+  function handleLogout() {
+    dispatch(logout());
+  }
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
@@ -37,7 +44,9 @@ export default function Navigation() {
             <Nav.Link as={NavLink} to="/login">
               Login
             </Nav.Link>
-          ) : null}
+          ) : (
+            <Button onClick={handleLogout}>Logout</Button>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

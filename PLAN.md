@@ -197,8 +197,16 @@ BONUS:
 
 # Feature, get our own profile
 
-- Getting our own profile means we have to be authorized
-- We have to send out token to get our profile
-- After we signup or login, get our own profile from `/me` endpoint
-- Sent the token in a header to be authorized
-- Display some info to the user that we are logged in (email in Navbar)
+- X Getting our own profile means we have to be authorized
+- X We have to send out token to get our profile
+- X After we signup or login, get our own profile from `/me` endpoint
+- X Sent the token in a header to be authorized
+- X Display some info to the user that we are logged in (email in Navbar)
+
+# Feature: Staying logged in (save token in localStorage)
+
+- Save token in local storage
+- Get token as an initia;
+- When the app is loading for first time, use the token from the localstorage
+- If we can make a request with the token -> keep it
+- If can't make a request with the token -> log our user out (token no longer valid)

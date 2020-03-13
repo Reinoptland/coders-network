@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import PostsList from "./pages/PostsList";
 import DeveloperList from "./pages/DeveloperList";
@@ -9,8 +9,17 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import { fetchOwnProfile } from "./store/user/actions";
+import { useDispatch } from "react-redux";
 
 function App() {
+  // is my token still valid? if not logout
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchOwnProfile());
+  }, [dispatch]);
+
   return (
     <div>
       <Navigation />
