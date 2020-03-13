@@ -2,11 +2,12 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
-import { selectToken } from "../store/user/selectors";
+import { selectToken, selectUserEmail } from "../store/user/selectors";
 import { useSelector } from "react-redux";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
+  const email = useSelector(selectUserEmail);
   // console.log("TOKEN IN NAVBAR", token);
   return (
     <Navbar bg="light" expand="lg">
@@ -29,7 +30,9 @@ export default function Navigation() {
             <Nav.Link as={NavLink} to="/signup">
               Sign up
             </Nav.Link>
-          ) : null}
+          ) : (
+            <p>{email}</p>
+          )}
           {token === null ? (
             <Nav.Link as={NavLink} to="/login">
               Login
