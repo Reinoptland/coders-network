@@ -27,7 +27,7 @@ import axios from "axios";
 export function thunkExample() {
   return async function(dispatch, getState) {
     const reduxState = getState();
-    console.log("WHAT IS IN THE STATE", reduxState);
+    // console.log("WHAT IS IN THE STATE", reduxState);
     if (reduxState.posts.length === 0) {
       dispatch({ type: "I_AM_LOADING" });
       dispatch({ type: "SOMETHING HAPPENED" });
