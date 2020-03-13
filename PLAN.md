@@ -169,6 +169,7 @@ WHAT DO WE NEED?
   - X Route & Link to see the form
   - X Event handlers / Listeners
 - Send info api
-  - async action
+  - X async action
+  - Make a post request to the api
   - dispatch action
   - handle action in reducer -> token -> store in the reducer
